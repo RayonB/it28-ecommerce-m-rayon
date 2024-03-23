@@ -135,3 +135,24 @@
             totalPrice += price;
             updateTotalPrice();
         }
+        function updateTotalPrice() {
+            document.getElementById("totalPrice").textContent = "Total Price: $" + totalPrice.toFixed(2);
+        }
+
+        function togglePaymentOptions() {
+            var paymentOptions = document.querySelector('.payment-options');
+            if (paymentOptions.style.display === "none") {
+                paymentOptions.style.display = "block";
+            } else {
+                paymentOptions.style.display = "none";
+            }
+        }
+        function processPaymentAndAccounting(paymentMethod) {
+            // Implement payment functionality
+            alert("Processing Payment...");
+            // Add track my order functionality
+            var paymentoforder = prompt("Enter the number of account:");
+            if (paymentoforder) {
+                alert("Payment your order at: " + paymentoforder);
+            }
+        }
