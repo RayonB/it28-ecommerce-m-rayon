@@ -112,3 +112,26 @@
             <button onclick="cancelChat()">Cancel</button>
         </div>
     </div>
+    <script>
+        var totalPrice = 0;
+        function addToCart(name, price) {
+            var cartBody = document.getElementById("cartBody");
+            var newRow = document.createElement("tr");
+            var nameCell = document.createElement("td");
+            nameCell.textContent = name;
+            newRow.appendChild(nameCell);
+
+            var quantityCell = document.createElement("td");
+            quantityCell.textContent = 1;
+            newRow.appendChild(quantityCell);
+
+            var priceCell = document.createElement("td");
+            priceCell.textContent = "$" + price.toFixed(2);
+            newRow.appendChild(priceCell);
+
+            cartBody.appendChild(newRow);
+
+            // Update total price
+            totalPrice += price;
+            updateTotalPrice();
+        }
