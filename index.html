@@ -97,3 +97,18 @@
         <button onclick="buyItems()">Buy</button>
         <button onclick="cancelPurchase()">Cancel</button>
     </div>
+    
+    <div class="chat-box" id="chatBox">
+        <div class="chat-box-header" onclick="toggleChatBox()">
+            <h3>Customer Service Chat</h3>
+            <button onclick="contactSeller()">Contact Seller</button>
+        </div>
+        <div class="chat-box-body" id="chatBody">
+            <!-- Chat messages will be displayed here -->
+        </div>
+        <div class="chat-box-footer">
+            <input type="text" id="chatInput" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+            <button onclick="cancelChat()">Cancel</button>
+        </div>
+    </div>
