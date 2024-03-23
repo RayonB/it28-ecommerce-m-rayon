@@ -328,5 +328,18 @@
                  messageElement.textContent = "You: " + message;
                       chatBody.appendChild(messageElement);
                       document.getElementById("chatInput").value = "";
+        }
+   }
+        function cancelChat() {
+            var chatBox = document.getElementById("chatBox");
+            chatBox.style.display = "none";
+   }
+
+        function contactSeller() {
+            // Add your logic to contact the seller here
+            alert("Contacting Seller...");
     }
-}
+    
+    </script>
+</body>
+</html> 
