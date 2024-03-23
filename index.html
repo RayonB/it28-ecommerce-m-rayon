@@ -174,3 +174,29 @@
                 alert("Tracking your order at: " + orderTrackingLink);
             }
         }
+        function openCustomerService() {
+            var chatBox = document.getElementById("chatBox");
+            if (chatBox.style.display === "none") {
+                chatBox.style.display = "block";
+            } else {
+                chatBox.style.display = "none";
+            }
+        }
+
+        function openReport() {
+            // Implement report functionality
+            alert("Opening Report...");
+        }
+
+        function buyItems() {
+            // Implement buy items functionality
+            alert("Buying Items...");
+
+            // Clear the cart and reset total price
+            var cartBody = document.getElementById("cartBody");
+            while (cartBody.firstChild) {
+                cartBody.removeChild(cartBody.firstChild);
+            }
+            totalPrice = 0;
+            updateTotalPrice();
+        }
