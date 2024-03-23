@@ -310,3 +310,23 @@
             totalPrice = 0;
             updateTotalPrice();
         }
+
+        function toggleChatBox() {
+              var chatBox = document.getElementById("chatBox");
+                 if (chatBox.style.display === "none") {
+                     chatBox.style.display = "block";
+                 } else {
+                     chatBox.style.display = "none";
+        }
+    }
+
+        function sendMessage() {
+             var message = document.getElementById("chatInput").value.trim();
+               if (message !== "") {
+             var chatBody = document.getElementById("chatBody");
+             var messageElement = document.createElement("p");
+                 messageElement.textContent = "You: " + message;
+                      chatBody.appendChild(messageElement);
+                      document.getElementById("chatInput").value = "";
+    }
+}
