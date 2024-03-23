@@ -156,3 +156,21 @@
                 alert("Payment your order at: " + paymentoforder);
             }
         }
+        function toggleLogisticsOptions() {
+            var logisticsOptions = document.querySelector('.logistics-options');
+            if (logisticsOptions.style.display === "none") {
+                logisticsOptions.style.display = "block";
+            } else {
+                logisticsOptions.style.display = "none";
+            }
+        }
+
+        function processLogistics(logisticsMethod) {
+            // Implement logistic functionality
+            alert("Processing Logistic...");
+            // Add track my order functionality
+            var orderTrackingLink = prompt("Enter the order tracking link:");
+            if (orderTrackingLink) {
+                alert("Tracking your order at: " + orderTrackingLink);
+            }
+        }
