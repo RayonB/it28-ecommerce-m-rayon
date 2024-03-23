@@ -77,3 +77,23 @@
         <button class="add-to-cart-btn" onclick="addToCart('Loaf Bread', 118)">Add to Cart</button>
     </div>
         <!-- Add more product items here -->
+        
+    <h2>Cart</h2>
+    <table id="cartTable">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody id="cartBody">
+            <!-- Cart items will be added here dynamically -->
+        </tbody>
+    </table>
+    <div id="totalPrice"></div>
+
+    <div class="button-group">
+        <button onclick="buyItems()">Buy</button>
+        <button onclick="cancelPurchase()">Cancel</button>
+    </div>
