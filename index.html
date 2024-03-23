@@ -15,3 +15,24 @@
         <button onclick="processPaymentAndAccounting('GCash')">GCash</button>
         <button onclick="processPaymentAndAccounting('Cash On Delivery')">Cash On Delivery</button>
 </div>
+<div class="top-left-buttons"></div>
+            <button onclick="toggleLogisticsOptions()">Logistics</button>
+        <div class="logistics-options">    
+                <button onclick="processLogistics('Tracking Items')">Tracking Items</button>
+        </div>
+            <button onclick="openCustomerService()">Customer Service</button>
+            <button onclick="openReport()">Report</button>
+        </div>
+</head>
+<body>
+    <div class="top-right-buttons"></div>
+    <h2>Products</h2>
+    <div class="product-container">
+        <div class="product-item">
+            <img src="https://imgs.search.brave.com/UYzUrhuChhP4NHv-_vL17BZeRhGkDtt0y0mKgYntaXE/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9jOG4u/dHJhZGVsaW5nLmNv/bS9pbWcvcGxhaW4v/cGltL3JzOmF1dG86/ODAwOjowL2Y6d2Vi/cC9xOjk1L3VwLzVl/ZTg3NGMxOGUwZDUz/MDAxYmZmNjA5NS8x/NjU5NjRiMzM0NmQ2/YmIwNWEwYTNjN2E3/ZGQ1N2RiNy5qcGc" alt="Product 1" class="product-img">
+            <div>Birch Tree 300g</div>
+            <div>"100% pure cow's milk with no added sugar, no added preservatives."</div>
+            <div>200.00</div>
+            <div>Exp: "2027-02-14"</div>
+            <button class="add-to-cart-btn" onclick="addToCart('Birch Tree 300g', 200)">Add to Cart</button>
+        </div>
