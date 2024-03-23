@@ -45,6 +45,71 @@
         .payment-options {
             display: none;
         }
+        #totalPrice {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .button-group {
+            margin-top: 20px;
+        }
+        .button-group button {
+            margin-right: 10px;
+        }
+        .chat-box {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 30px;
+            width: 300px;
+            height: 400px;
+            background-color: #882929;
+            border: 1px solid #ccc;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+        }
+        .chat-box-header {
+            background-color: #df9f9f;
+            padding: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chat-box-header h3 {
+            margin: 0;
+            font-size: 16px;
+        }
+        .chat-box-body {
+            padding: 10px;
+            height: 320px;
+            overflow-y: scroll;
+        }
+        .chat-box-body p {
+            margin: 5px 0;
+        }
+        .chat-box-footer {
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chat-box-footer input[type="text"] {
+            width: 70%;
+            padding: 5px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+            margin-right: 5px;
+        }
+        .chat-box-footer button {
+            padding: 5px 10px;
+            border-radius: 3px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <hr><center>
@@ -110,7 +175,7 @@
             <button class="add-to-cart-btn" onclick="addToCart('Nutella', 243)">Add to Cart</button>
         </div>
     <div class="product-item">
-        <img src="https://imgs.search.brave.com/iR8yrWh0DQzxjq5JsGVrDIiO2yXnkpPF0AEyz_IlQwE/rs:fit:500:0:0/g:ce/aHR0cHM6Ly90YXN0/ZXNiZXR0ZXJmcm9t/c2NyYXRjaC5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMjAv/MDMvQnJlYWQtUmVj/aXBlLTUtMi5qcGc" alt="Product 7" class="product-img">
+        <img src="https://imgs.search.brave.com/iR8yrWh0DQzxjq5JsGVrDIiO2yXnkpPF0AEyz_IlQwE/rs:fit:500:0:0/g:ce/aHR0cHM6Ly90YXN0/ZXNiZXR0ZXJmcm9t/c2NyYXRjaC5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMjAv/MDMvQnJlYWQtUmVj/aXBlLTUtMi5qcGc" alt="Product 6" class="product-img">
         <div>Loaf Bread </div>
         <div>"Made of flour or meal that moistened, kneaded, and sometimes fermented."</div>
         <div>118</div>
@@ -153,6 +218,7 @@
             <button onclick="cancelChat()">Cancel</button>
         </div>
     </div>
+
     <script>
         var totalPrice = 0;
         function addToCart(name, price) {
@@ -176,6 +242,7 @@
             totalPrice += price;
             updateTotalPrice();
         }
+
         function updateTotalPrice() {
             document.getElementById("totalPrice").textContent = "Total Price: $" + totalPrice.toFixed(2);
         }
@@ -197,6 +264,7 @@
                 alert("Payment your order at: " + paymentoforder);
             }
         }
+
         function toggleLogisticsOptions() {
             var logisticsOptions = document.querySelector('.logistics-options');
             if (logisticsOptions.style.display === "none") {
@@ -215,6 +283,7 @@
                 alert("Tracking your order at: " + orderTrackingLink);
             }
         }
+
         function openCustomerService() {
             var chatBox = document.getElementById("chatBox");
             if (chatBox.style.display === "none") {
@@ -241,46 +310,3 @@
             totalPrice = 0;
             updateTotalPrice();
         }
-        function cancelPurchase() {
-            alert("Purchase Cancelled.");
-            // Clear the cart and reset total price
-            var cartBody = document.getElementById("cartBody");
-            while (cartBody.firstChild) {
-                cartBody.removeChild(cartBody.firstChild);
-            }
-            totalPrice = 0;
-            updateTotalPrice();
-        }
-
-        function toggleChatBox() {
-            var chatBox = document.getElementById("chatBox");
-            if (chatBox.style.display === "none") {
-                chatBox.style.display = "block";
-            } else {
-                chatBox.style.display = "none";
-            }
-        }
-
-        function sendMessage() {
-            var message = document.getElementById("chatInput").value.trim();
-            if (message !== "") {
-                var chatBody = document.getElementById("chatBody");
-                var messageElement = document.createElement("p");
-                messageElement.textContent = "You: " + message;
-                chatBody.appendChild(messageElement);
-                document.getElementById("chatInput").value = "";
-            }
-        }
-
-        function cancelChat() {
-            var chatBox = document.getElementById("chatBox");
-            chatBox.style.display = "none";
-        }
-
-        function contactSeller() {
-            // Add your logic to contact the seller here
-            alert("Contacting Seller...");
-        }
-    </script>
-</body>
-</html>
